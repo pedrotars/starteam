@@ -5,10 +5,9 @@
 
 ## Persona recorrente
 
-### Pedro (admin / dono do produto)
-- Perfil não-técnico: não opera terminal, não quer gerenciar infra.
-- Prefere fluxos rápidos e diretos (ver, agir, confirmar — sem burocracia).
-- Restrição de custo costuma ser rígida — trate budget como hard constraint com threshold de alerta.
+### Dono do produto (admin)
+- _(Preencha ao instanciar: nível técnico, preferências de fluxo, restrições conhecidas.)_
+- Exemplo: perfil não-técnico → passo-a-passo claro, sem jargão; restrição de custo rígida → trate budget como hard constraint.
 
 _(Adicione as personas específicas do projeto ao instanciar.)_
 

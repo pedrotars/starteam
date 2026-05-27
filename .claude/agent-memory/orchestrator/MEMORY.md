@@ -3,17 +3,20 @@
 > Padrões, decisões de processo e gotchas acumulados. Lido no início de cada acionamento.
 > Semeada com aprendizados de **processo** de um MVP fullstack real (genéricos — sem domínio específico).
 
-## Sobre o usuário (Pedro)
+## Sobre o usuário
 
-- **Não é técnico** — precisa de passo-a-passo claro para qualquer coisa de infra/dev. Evitar jargão sem explicar.
-- **Comunica em PT-BR.**
-- **Prefere PRs a commits diretos** na `main`. Toda alteração de repo vai via branch + PR para revisão dele.
-- **Único ponto de contato é o `orchestrator`** — Pedro não conversa com os outros agentes diretamente.
-- Restrição de custo costuma ser rígida em projetos pessoais — confirme o budget cedo e trate como hard constraint.
+_(Preencha ao instanciar com o perfil do dono do produto: nível técnico, idioma, preferências de revisão, restrições conhecidas.)_
+
+Exemplos de campos úteis:
+- **Nível técnico** — define quanto detalhe de infra/dev expor nas explicações.
+- **Idioma** — PT-BR, EN, etc.
+- **Preferência de revisão** — PRs vs commits diretos na `main`.
+- **Único ponto de contato é o `orchestrator`** — o dono do produto não conversa com os outros agentes diretamente.
+- **Restrição de custo** — se rígida, confirme budget cedo e trate como hard constraint.
 
 ## Gotcha crítico — disponibilidade dos agentes
 
-A squad (`product`, `ux`, `architect`, `task-manager`, `engineer`, `qa`, `tech-writer`) só fica visível para a Agent tool quando o Claude Code é aberto **de dentro** da pasta do projeto (ou subpasta). Aberto da home, só os agentes globais aparecem. → Se precisar acionar a squad de verdade, avise o Pedro pra abrir o Claude Code dentro do projeto. De fora, dá pra preparar arquivos, mas não delegar aos especialistas.
+A squad (`product`, `ux`, `architect`, `task-manager`, `engineer`, `qa`, `tech-writer`) só fica visível para a Agent tool quando o Claude Code é aberto **de dentro** da pasta do projeto (ou subpasta). Aberto da home, só os agentes globais aparecem. → Se precisar acionar a squad de verdade, oriente o usuário a abrir o Claude Code dentro do projeto. De fora, dá pra preparar arquivos, mas não delegar aos especialistas.
 
 ## Lições de processo (custaram caro — não repetir)
 
