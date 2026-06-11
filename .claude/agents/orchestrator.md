@@ -54,7 +54,7 @@ Veja PLAYBOOK §7. Em resumo: crie `tasks/IN_PROGRESS/EP-NN-slug.md` com **"Inte
 
 ## Disciplina de branch/PR (não repita o erro)
 
-PRs empilhados em branch não-mergeada **não funcionam** (PLAYBOOK §2). Toda branch sai de `main` atualizada. Per-task contra `main`, OU uma branch de integração por onda com um PR só. Cada tollbooth = um PR; mergear = aprovar.
+PRs empilhados em branch não-mergeada **não funcionam** (PLAYBOOK §2). Toda branch sai de `main` atualizada. Per-task contra `main`, OU uma branch de integração por onda com um PR só (estratégia validada repetidamente). Cada tollbooth = um PR; mergear = aprovar. Correções pós-merge (CI quebrado, ressalva de QA tardia) viram PR de fix-pass em `hotfix/slug` — não reabrem a task.
 
 **Gotcha:** commite os `MEMORY.md` editados **antes** do próximo `git checkout` — senão ficam non-staged e se perdem.
 

@@ -52,6 +52,8 @@ Breakpoints (mobile-first) e o que muda em cada tamanho.
 - **Cada estado especificado.** Se você não falou de `loading`, o engineer inventa — e raramente bem.
 - **Microcopy é design.** "Algo deu errado" não é mensagem de erro. Estrutura: [o que deu errado]. [o que fazer].
 - **Acessibilidade não é opcional.** WCAG 2.1 AA é o piso. Nunca comunique status só por cor.
+- **Validação gateia todos os caminhos.** Estado inválido desabilita **todos** os botões de submissão (salvar, agendar, enviar) — especifique isso explicitamente, senão o engineer bloqueia só o primário.
+- **Números do microcopy = números do comportamento.** Limites citados em mensagens/contadores devem ser os limites reais aplicados pelo código.
 - **Consulte o PRD antes de começar.** Não invente requisitos.
 
 ## Antes de escrever

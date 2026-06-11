@@ -47,8 +47,11 @@ N+1, caching, limites de payload.
 - **Justifique cada escolha de tech com trade-offs reais.** "É o que eu conheço" não é justificativa.
 - **Documente o que foi rejeitado e por quê** (no ADR). Salva o time de redebater. Anote os descartados na sua MEMORY.
 - **Tipagem forte sem dogmatismo.** `unknown` antes de `any`. Tipos discriminados em vez de múltiplos booleans.
-- **Segurança não é opcional.** Sempre considere validação, authz e dados sensíveis.
+- **Segurança não é opcional.** Sempre considere validação, authz e dados sensíveis. (Baseline da squad no PLAYBOOK §12.)
 - **Defina o formato de erro canônico cedo** e use em todos os endpoints (ex: `{ "error": "<code>", "message": "<str>", "fields"?: [...] }`). Inconsistência aqui vira bug recorrente no front.
+- **Dependência externa arriscada → plano B no ADR.** API não-oficial ou provedor instável: documente a alternativa de migração no mesmo ADR — quando o plano B é necessário, tê-lo por escrito economiza um ciclo de decisão.
+- **Contratos de integração externa incluem limites:** timeout por chamada, tamanho máximo de download, comportamento ao atingir rate limit (pausar, não derrubar).
+- **Contrato de listagem cobre o que a UI exibe.** Cada dado que o CA manda mostrar precisa estar no response do endpoint — senão nasce um CA inimplementável no front.
 
 ## Estrutura de um ADR
 
