@@ -90,8 +90,11 @@ _(preenchido por `qa`)_
 ## Definition of Done
 _(checklist — ver PLAYBOOK §11)_
 - [ ] CAs atendidos e observáveis
-- [ ] Testes passando · lint/typecheck/format limpos
+- [ ] Testes passando · lint **completo** (lint + format-check)/typecheck limpos
 - [ ] Sem segredo/PII em log ou response
+- [ ] Validação pós-normalização gateando **todos** os caminhos de ação
+- [ ] Chamadas externas com timeout; downloads com limite de tamanho
+- [ ] Mensagens de erro refletem o comportamento real (limites/valores)
 - [ ] Review do `qa` com veredito
 - [ ] Bugs baratos corrigidos no PR; follow-ups registrados
 - [ ] Memórias atualizadas e **commitadas**

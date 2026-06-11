@@ -1,7 +1,7 @@
 # Orchestrator Memory
 
 > Padrões, decisões de processo e gotchas acumulados. Lido no início de cada acionamento.
-> Semeada com aprendizados de **processo** de um MVP fullstack real (genéricos — sem domínio específico).
+> Semeada com aprendizados de **processo** de um produto fullstack real — do MVP à operação contínua (5 épicos, 60+ tasks).
 
 ## Sobre o usuário
 
@@ -30,13 +30,16 @@ A squad (`product`, `ux`, `architect`, `task-manager`, `engineer`, `qa`, `tech-w
 - **QA acha 2–7 ressalvas Medium/Low por task.** Mande o `engineer` corrigir as baratas/de-fundação no mesmo PR; empurre pra follow-up só o que depende de task futura. Qualidade alta sem travar.
 - **Loop de dev:** orchestrator move TODO→IN_PROGRESS + marca tollbooth → engineer implementa em TDD e commita (não abre PR, não move DONE) → qa revisa e escreve Review → orchestrator manda corrigir bugs baratos → move DONE, commita bookkeeping+memórias, abre PR. Mergear PR = checkpoint humano. UMA task em IN_PROGRESS por vez.
 - **Cada tollbooth = um PR.** kickoff=PR, PM/UX=PR, Arch=PR, quebra-tasks=PR, cada task de dev=PR. Mergear = aprovar.
-- **Follow-ups cross-cutting se perdem** (ex: um campo que precisa de fix em vários modelos). Registre em `tasks/FOLLOW-UPS.md` e relembre o engineer na próxima task relevante.
+- **Branch de integração por onda (opção b do PLAYBOOK §2) validada repetidamente** — 4 ondas consecutivas sem incidente de branch. Default quando o usuário pede "toca a onda inteira".
+- **Fix-pass pós-merge:** ressalvas de QA descobertas depois do merge (ou CI quebrado) viram um PR dedicado em `hotfix/slug`, referenciando os BUG-IDs — não reabrem a task. Pequeno e mergeável rápido.
+- **Follow-ups cross-cutting se perdem** (ex: um campo que precisa de fix em vários modelos). Registre em `tasks/FOLLOW-UPS.md`, revise a lista ao planejar cada onda, e relembre o engineer na próxima task relevante.
 
 ## Convenção de branches
 
 ```
 orchestrator/EP-NN-slug      product/EP-NN-prd-ux       architect/EP-NN-spec-tecnica
 task-manager/EP-NN-quebra    engineer/NNN-task-slug     (ou engineer/EP-NN-onda-K)
+hotfix/slug                  ← correção pós-merge (CI, ressalva QA tardia)
 ```
 
 ## Padrão de captura de intenção

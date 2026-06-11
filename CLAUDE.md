@@ -9,9 +9,11 @@ _(Preencha quando instanciar o template. Uma frase: o que estamos construindo e 
 
 Este repositório usa um **modelo de squad de 8 agentes** coordenados por um `orchestrator`. O fluxo, os portões (tollbooths) e as regras de processo estão no **[PLAYBOOK.md](PLAYBOOK.md)** — leia-o antes de agir em qualquer pedido não-trivial.
 
-## Regra de ouro
+## Regras de ouro
 
 **Não decida produto, design ou arquitetura no vácuo.** Se o pedido do usuário é um épico ou uma feature, ele passa pela squad (`product` → `ux` → `architect` → `task-manager` → `engineer` → `qa` → `tech-writer`), respeitando os tollbooths. Dúvidas pontuais e bugs pequenos podem ser respondidos direto. Veja o PLAYBOOK para a fronteira.
+
+**Segurança é responsabilidade distribuída, não uma fase.** Cada agente tem a sua parte no baseline (PLAYBOOK §12); o `qa` é o último filtro, não o primeiro.
 
 ## Onde está o quê
 

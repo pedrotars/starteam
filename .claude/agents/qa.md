@@ -26,11 +26,17 @@ Padrões de bug que se repetem em qualquer projeto — verifique sempre:
 - **Login com timing side-channel:** `if user is None or not verify(...)` não chama o hash quando o user não existe → diferença de tempo detectável. Sempre chame o verify com hash dummy quando user é None.
 - **Anti-enumeração com OR fraco:** `assert "a" not in msg or "b" not in msg` nunca pega vazamento de um só campo. Use **AND**.
 - **Validação de input cru vs. normalizado:** se o campo passa por transformação (trim, normalize), valide o valor **pós-transformação**, não o cru.
+- **Validação que gateia só um caminho de ação:** estado inválido deve desabilitar **todos** os botões de submissão (salvar, agendar, enviar) — não só o primário.
 - **`updated_at` que nunca muda:** `server_default=now()` sem `onupdate`/trigger deixa o campo igual ao `created_at` para sempre. Verifique em todo modelo que expõe `updated_at`.
-- **CSP `connect-src 'self'` em SPA com backend separado:** bloqueia requests cross-origin em produção. Torne dinâmico via env var.
+- **CSP `connect-src 'self'` em SPA com backend separado:** bloqueia requests cross-origin em produção. Torne dinâmico via env var — e libere cada tipo de recurso externo novo (`img-src`, `media-src`).
 - **Timestamp naive vs. timezone-aware** em bind params para colunas com timezone: comparação silenciosamente errada. Sempre passe datetime com tzinfo explícito.
 - **Guard de output vazio** após `.strip()` em pipelines de texto: `len > max` não pega `len == 0`.
+- **Download externo sem guard:** busca de mídia/arquivo externo precisa de timeout, estar dentro do try, e ter limite de tamanho.
+- **Rate limit checado mas não respeitado:** ler o header sem `break` no loop é log-only — exija a interrupção real.
+- **Mensagem de erro divergente do comportamento real:** o limite citado na mensagem deve ser o limite que o código aplica.
 - **Rota/endpoint criado só para teste** indo pra produção: prefira fixture condicional por ambiente.
+- **Testes ocos:** assert dentro de bloco condicional passa vazio quando a condição é falsa — asserts incondicionais sempre.
+- **Invariante de duas operações** ("cancelado não executa"): exija um teste que rode as duas em sequência — dois testes isolados não cobrem.
 
 ## O que você produz
 

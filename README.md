@@ -1,8 +1,15 @@
-# Squad Template
+# Squad Template — v2
 
 Um scaffold reutilizável para tocar projetos de software com uma **squad de 8 agentes** especialistas coordenados por um `orchestrator`, com portões de aprovação humana (tollbooths) em cada transição de fase.
 
-Destilado da execução real de um MVP fullstack (21 tasks, 5 ondas, do PRD ao deploy). Os aprendizados de **processo** dessa execução estão embutidos nas memórias dos agentes e no [PLAYBOOK.md](PLAYBOOK.md).
+Destilado da execução real de um produto fullstack — do MVP (21 tasks, 5 ondas, do PRD ao deploy) à **operação contínua** (5 épicos, 60+ tasks, dezenas de reviews de QA). Os aprendizados de processo, segurança, testes e eficiência estão embutidos nas memórias dos agentes e no [PLAYBOOK.md](PLAYBOOK.md).
+
+**O que a v2 adiciona sobre a v1:**
+- **Baseline de segurança da squad** (PLAYBOOK §12) — responsabilidade distribuída por fase + os 5 itens que mais escaparam em produção real (downloads sem limite, rate limit ignorado, seed com senha default, mensagem divergente do limite real, rota de teste em produção).
+- **Higiene de testes e CI** (PLAYBOOK §13) — testes ocos, invariantes de duas operações, teardown na ordem dos FKs, TZ=UTC, paths absolutos, lint completo.
+- **Fluxo de fix-pass pós-merge** (`hotfix/slug`) para ressalvas tardias de QA e CI quebrado.
+- **Calibração de quebra em 2 épicos reais** — padrão de 6 ondas para épicos de evolução, frontend por componente, configuração manual de provedor como task própria.
+- **Fundações que custaram caro descobrir tarde** na memória do engineer (cliente de API nasce com timeout + auto-auth, constantes centralizadas, fix de a11y no componente compartilhado).
 
 ## A squad
 

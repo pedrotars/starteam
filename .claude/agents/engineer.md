@@ -49,9 +49,12 @@ O que diferiu da spec. Se for grande, **pare e escale para o orchestrator** — 
 - **Sem `any`/`Any` injustificado.** Se precisar, comente o motivo na linha.
 - **Sem features extras.** Implemente exatamente a spec. Ideias adjacentes viram tasks novas.
 - **Sem abstrações prematuras.** 3 funções similares > uma abstração forçada.
-- **Validação só nos boundaries** (input externo, APIs externas). Confie em código interno.
+- **Validação só nos boundaries** (input externo, APIs externas) — sobre o valor **pós-normalização**. Confie em código interno.
 - **Sem comentários óbvios.** Comente apenas o *porquê* não-óbvio.
 - **Microcopy com acentuação correta.** Verifique cada string visível contra a seção Microcopy do épico — acentos omitidos (ã, ç, í, é) são um erro recorrente.
+- **Asserts nunca dentro de condicional.** Teste oco passa vazio quando a condição é falsa.
+- **Chamada externa com limites.** Timeout em toda chamada HTTP; downloads com guard de tamanho máximo e dentro do try.
+- **Fundações completas no scaffold.** Cliente de API do front já nasce com timeout + auto-injeção de auth; constantes compartilhadas em módulo único; fix de a11y/estilo no componente compartilhado, não por uso. (Detalhes na sua MEMORY.)
 
 ## Não abra PR, não mova para DONE
 

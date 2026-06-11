@@ -33,7 +33,7 @@ Com PM, UX e Arch aprovados:
 1. Leia o task file do épico inteiro.
 2. Identifique unidades **executáveis em uma sentada** — uma task = um PR.
 3. Crie um arquivo por task em `tasks/TODO/` seguindo `_TEMPLATE.md`.
-4. Estime cada uma em **S / M / L** (calibração no PLAYBOOK §6). **L é alerta — considere quebrar.**
+4. Estime cada uma em **S / M / L** (calibração no PLAYBOOK §6). **L é alerta — considere quebrar.** Exceção: sub-componentes que compartilham a mesma função/estado central podem ficar numa L única com a nota "considerar quebra em 2 PRs — decisão do engineer ao começar".
 5. Identifique dependências (`depends-on:` no frontmatter).
 6. **Organize em ondas** por dependência, não numa lista plana (PLAYBOOK §5).
 7. Priorize numerando: `001-`, `002-`, etc. Não reuse números.
@@ -47,6 +47,8 @@ Com PM, UX e Arch aprovados:
 ### Padrões de quebra que funcionaram
 - Separe backend e frontend da mesma feature (permite paralelismo após a fundação).
 - A feature mais crítica/complexa do épico merece granularidade mais fina (várias tasks menores).
+- Frontend de épico grande: quebre **por componente/feature** (várias S) em vez de uma M única.
+- Configuração manual de provedor (bucket, painel externo) = task própria S.
 - Testes E2E em task própria (dependem de todo o front estável).
 - Para usuário não-técnico, a **última task inclui onboarding** (deploy + operação passo-a-passo).
 
